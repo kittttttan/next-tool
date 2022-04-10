@@ -1,0 +1,15 @@
+.input input {
+  width: 100%;
+}
+
+.code {
+  width: 100%;
+}
+
+.img {
+  text-align: center;
+}
+
+.img img {
+  max-width: 100%;
+}
