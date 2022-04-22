@@ -1,0 +1,92 @@
+.main>div {
+  width: 100%;
+}
+
+.display {
+  border: 1px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 256px;
+}
+
+.block {
+  color: #fff;
+  background: #000;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.block1 {
+  animation: fuwa1 4s ease 0s infinite normal none running;
+}
+
+.block2 {
+  animation: fuwa2 4s ease 0s infinite normal none running;
+}
+
+.block3 {
+  animation: fuwa3 2s ease 0s infinite normal none running;
+}
+
+.warn {
+  display: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .warn {
+    display: block;
+  }
+  .block1,
+  .block2,
+  .block3 {
+    animation: none;
+  }
+}
+
+/*
+https://developer.mozilla.org/ja/docs/Web/CSS/animation
+animation-delay
+animation-direction
+animation-duration
+animation-fill-mode
+animation-iteration-count
+animation-name
+animation-play-state
+animation-timing-function
+*/
+
+@keyframes fuwa1 {
+  0%,
+  100% {
+    transform: rotate(10deg);
+  }
+
+  50% {
+    transform: rotate(-10deg);
+  }
+}
+
+@keyframes fuwa2 {
+  0%,
+  100% {
+    transform: skew(10deg);
+  }
+
+  50% {
+    transform: skew(-10deg);
+  }
+}
+
+@keyframes fuwa3 {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  45% {
+    transform: translateY(-15px);
+  }
+}

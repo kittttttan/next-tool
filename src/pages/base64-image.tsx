@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useState } from 'react'
-import styles from '../styles/Base64Image.module.css'
+import styles from 'styles/Base64Image.module.css'
 
 const Base64Image: NextPage = () => {
   const [code, setCode] = useState('')
@@ -12,10 +12,10 @@ const Base64Image: NextPage = () => {
     }
 
     const reader = new FileReader();
-    reader.addEventListener('load', function () {
-      setCode(reader.result as string);
-    }, false);
-    reader.readAsDataURL(files[0]);
+    reader.addEventListener('load', () => {
+      setCode(reader.result as string)
+    }, false)
+    reader.readAsDataURL(files[0])
   }
 
   return (

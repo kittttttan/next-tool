@@ -7,6 +7,7 @@ const Home: NextPage = () => {
     { u: '/base64-image', t: 'Base64 Image' },
     { u: '/bin-hex', t: 'Bin ↔ Hex' },
     { u: '/text-util', t: 'Text Utility' },
+    { u: '/animation', t: 'Animation' },
   ];
 
   return (
