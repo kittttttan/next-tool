@@ -1,10 +1,15 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import { useState } from 'react'
-import { format, hexToBin } from 'utils/hex'
-import styles from 'styles/BinHex.module.css'
+'use client';
 
-const BinHex: NextPage = () => {
+import { useState } from 'react'
+import { format, hexToBin } from '@/utils/hex'
+import styles from './page.module.css'
+import type { Metadata } from 'next';
+ 
+export const metadata: Metadata = {
+  title: 'Bin ↔ Hex',
+}
+
+export default function BinHex() {
   const [text, setText] = useState('')
 
   function handleFiles(files: FileList | null): void {
@@ -26,10 +31,6 @@ const BinHex: NextPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Bin ↔ Hex</title>
-      </Head>
-
       <h2>Bin ↔ Hex</h2>
       <div className={styles.input}>
         <input type="file" id="file" multiple={true}
@@ -62,5 +63,3 @@ const BinHex: NextPage = () => {
     </>
   )
 }
-
-export default BinHex

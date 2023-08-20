@@ -1,5 +1,5 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
+'use client';
+
 import { useState } from 'react'
 import {
   range,
@@ -11,19 +11,24 @@ import {
   removeBlankLine,
   escapeHtml,
   unescapeHtml,
-  stripHtml
-} from 'utils/string'
-import styles from 'styles/TextUtil.module.css'
+  stripHtml,
+  noCase,
+  camelCase,
+  pascalCase,
+  constCase,
+} from '@/utils/string'
+import styles from './page.module.css'
+import type { Metadata } from 'next';
+ 
+export const metadata: Metadata = {
+  title: 'Text Utility',
+}
 
-const TextUtil: NextPage = () => {
+export default function TextUtil() {
   const [text, setText] = useState('');
 
   return (
     <>
-      <Head>
-        <title>Text Utility</title>
-      </Head>
-
       <h2>Text Utility</h2>
       <div>
         set:
@@ -34,6 +39,10 @@ const TextUtil: NextPage = () => {
         convert:
         <button onClick={e => setText(text.toLowerCase())}>lower</button>
         <button onClick={e => setText(text.toUpperCase())}>upper</button>
+        <button onClick={e => setText(noCase(text))}>no case</button>
+        <button onClick={e => setText(camelCase(text))}>camelCase</button>
+        <button onClick={e => setText(pascalCase(text))}>PascalCase</button>
+        <button onClick={e => setText(constCase(text))}>CONST_CASE</button>
       </div>
       <div>
         sort lines:
@@ -62,5 +71,3 @@ const TextUtil: NextPage = () => {
     </>
   )
 }
-
-export default TextUtil

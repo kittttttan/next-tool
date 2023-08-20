@@ -92,3 +92,29 @@ export function stripHtml(s: string): string {
   tmp.innerHTML = s;
   return tmp.innerText || '';
 }
+
+export function noCase(s: string): string {
+  return s.replace(/ *([A-Z]*)([A-Z][a-z])/g, function(match, upper, word) {
+    return upper + ' ' + word.toLowerCase();
+  });
+}
+
+export function camelCase(s: string): string {
+  const l = s.charAt(0).toLowerCase() + s.slice(1);
+
+  return l.replace(/[-_ ]+(.)/g, function(match, word) {
+    return (word as string).toUpperCase();
+  });
+}
+
+export function pascalCase(s: string): string {
+  const p = camelCase(s);
+
+  return p.charAt(0).toUpperCase() + p.slice(1);
+}
+
+export function constCase(s: string): string {
+  return s.toUpperCase().replace(/[- ]+(.)/g, function(match, word) {
+    return '_' + word;
+  });
+}

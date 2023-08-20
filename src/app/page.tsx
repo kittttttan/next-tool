@@ -1,7 +1,8 @@
-import type { NextPage } from 'next'
+'use client';
+
 import Link from 'next/link'
 
-const Home: NextPage = () => {
+export default function Home() {
   const links = [
     { u: '/canvas', t: 'Canvas' },
     { u: '/base64-image', t: 'Base64 Image' },
@@ -18,7 +19,7 @@ const Home: NextPage = () => {
           {links.map((link, i) => (
             <li key={i}>
               <Link href={link.u}>
-                <a>{link.t}</a>
+                {link.t}
               </Link>
             </li>
           ))}
@@ -26,7 +27,7 @@ const Home: NextPage = () => {
         <ul>
           <li>
             <Link href="https://github.com/kittttttan/next-tool">
-              <a rel="external noopener">kittttttan/next-tool</a>
+              kittttttan/next-tool
             </Link>
           </li>
         </ul>
@@ -34,5 +35,3 @@ const Home: NextPage = () => {
     </>
   )
 }
-
-export default Home

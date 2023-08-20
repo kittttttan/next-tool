@@ -1,9 +1,14 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import { useState } from 'react'
-import styles from 'styles/Base64Image.module.css'
+'use client';
 
-const Base64Image: NextPage = () => {
+import { useState } from 'react'
+import styles from './page.module.css'
+import type { Metadata } from 'next';
+ 
+export const metadata: Metadata = {
+  title: 'Base64 Image',
+}
+
+export default function Base64Image() {
   const [code, setCode] = useState('')
 
   function readFile(files: FileList | null) {
@@ -20,10 +25,6 @@ const Base64Image: NextPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Base64 Image</title>
-      </Head>
-
       <h2>Base64 Image</h2>
       <div className={styles.input}>
         <input type="file" accept="image/*"
@@ -39,5 +40,3 @@ const Base64Image: NextPage = () => {
     </>
   )
 }
-
-export default Base64Image

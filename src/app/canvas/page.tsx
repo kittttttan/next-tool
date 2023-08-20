@@ -1,12 +1,17 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
+'use client';
+
 import { useEffect, useState } from 'react'
+import type { Metadata } from 'next';
+ 
+export const metadata: Metadata = {
+  title: 'Canvas',
+}
 
 function hex2rgba(code: string, opacity = 1): string {
   return `rgba(${parseInt(code.slice(-6, -4), 16)},${parseInt(code.slice(-4, -2), 16)},${parseInt(code.slice(-2), 16)},${opacity})`
 }
 
-const Canvas: NextPage = () => {
+export default function Canvas() {
   const [text, setText] = useState('320x240')
   const [fontSize, setFontSize] = useState(48)
   const [width, setWidth] = useState(320)
@@ -52,10 +57,6 @@ const Canvas: NextPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Canvas</title>
-      </Head>
-
       <h2>Canvas</h2>
       <div className="input" style={{
         maxWidth: 320,
@@ -106,5 +107,3 @@ const Canvas: NextPage = () => {
     </>
   )
 }
-
-export default Canvas

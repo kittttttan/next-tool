@@ -1,14 +1,15 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import styles from 'styles/Animation.module.css'
+'use client';
 
-const Animation: NextPage = () => {
+import styles from './page.module.css'
+import type { Metadata } from 'next';
+ 
+export const metadata: Metadata = {
+  title: 'Animation',
+}
+
+export default function Animation() {
   return (
     <>
-      <Head>
-        <title>Animation</title>
-      </Head>
-
       <h2>Animation</h2>
       <div className={styles.warn}>
         <code>prefers-reduced-motion: reduce</code>
@@ -30,5 +31,3 @@ const Animation: NextPage = () => {
     </>
   )
 }
-
-export default Animation

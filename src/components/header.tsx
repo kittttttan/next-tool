@@ -5,7 +5,7 @@ export default function Header() {
         <header>
             <h1>
                 <Link href="/">
-                    <a>Apps</a>
+                    Apps
                 </Link>
             </h1>
         </header>
