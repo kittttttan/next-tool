@@ -21,3 +21,7 @@ export function hexToBin(hex: string): Blob {
     type: 'application/octet-binary'
   });
 }
+
+export function hex2rgba(code: string, opacity = 1): string {
+  return `rgba(${parseInt(code.slice(-6, -4), 16)},${parseInt(code.slice(-4, -2), 16)},${parseInt(code.slice(-2), 16)},${opacity})`
+}
