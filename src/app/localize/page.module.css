@@ -1,0 +1,13 @@
+.texts {
+  width: 100%;
+  display: flex;
+}
+
+.texts > div {
+  width: 100%;
+}
+
+.textarea {
+  width: 100%;
+  height: 24em;
+}

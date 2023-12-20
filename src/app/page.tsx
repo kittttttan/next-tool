@@ -9,6 +9,7 @@ export default function Home() {
     { u: '/bin-hex', t: 'Bin ↔ Hex' },
     { u: '/text-util', t: 'Text Utility' },
     { u: '/animation', t: 'Animation' },
+    { u: '/localize', t: 'Localize' },
   ];
 
   return (
