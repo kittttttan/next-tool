@@ -5,8 +5,8 @@ import styles from './page.module.css'
 export default function Animation() {
     return (
       <>
-        <div className={styles.warn}>
-          <code>prefers-reduced-motion: reduce</code>
+        <div>
+          <code>prefers-reduced-motion: <var className={styles.prm}></var></code>
         </div>
         <section>
           <h3>ふわふわ</h3>

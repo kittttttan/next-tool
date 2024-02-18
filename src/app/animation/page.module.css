@@ -1,9 +1,5 @@
-.main>div {
-  width: 100%;
-}
-
 .display {
-  border: 1px solid #000;
+  border: 1px solid var(--fg-color);
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -11,8 +7,8 @@
 }
 
 .block {
-  color: #fff;
-  background: #000;
+  color: var(--bg-color);
+  background: var(--fg-color);
   width: 64px;
   height: 64px;
   display: flex;
@@ -32,17 +28,18 @@
   animation: fuwa3 2s ease 0s infinite normal none running;
 }
 
-.warn {
-  display: none;
+.prm::after {
+  content: 'no-preference';
 }
 @media (prefers-reduced-motion: reduce) {
-  .warn {
-    display: block;
+  .prm::after {
+    content: 'reduce';
   }
+
   .block1,
   .block2,
   .block3 {
-    animation: none;
+    /* animation: none; */
   }
 }
 

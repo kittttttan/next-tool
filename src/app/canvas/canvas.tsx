@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { hex2rgba } from '@/utils/hex'
+import styles from './page.module.css'
 
 export default function Canvas() {
   const [text, setText] = useState('320x240')
@@ -49,28 +50,18 @@ export default function Canvas() {
 
   return (
     <>
-      <div className="input" style={{
-        maxWidth: 320,
-        margin: 'auto'
-      }}>
+      <div className={styles.input}>
         <div>
-          size
-          <input type="number" min={1} max={1280} value={width} maxLength={4}
+          <input className={styles.num} id="size-x" type="number" min={1} max={1280} value={width} maxLength={4}
             onChange={e => setWidth(+e.target.value)} />
           x
-          <input type="number" min={1} max={1280} value={height} maxLength={4}
+          <input className={styles.num} type="number" min={1} max={1280} value={height} maxLength={4}
             onChange={e => setHeight(+e.target.value)} />
-        </div>
-        <div>
-          <label>
-            background
-            <input type="color" value={bgColor}
+          <input className={styles.color} id="bg-color" type="color" value={bgColor}
               onChange={e => setBgColor(e.target.value)} />
-          </label>
         </div>
         <div>
-          text
-          <input type="text" value={text}
+          <input id="text" type="text" value={text} style={{width:'100%'}}
             onChange={e => setText(e.target.value)} /><br />
           <select value={fontFamily}
             onChange={e => setFontFamily(e.target.value)}>
@@ -81,16 +72,16 @@ export default function Canvas() {
             <option value="cursive">cursive</option>
             <option value="fantasy">fantasy</option>
           </select>
-          <input type="number" id="fs" min={1} max={100} value={fontSize} maxLength={3}
+          <input className={styles.num} type="number" id="fs" min={1} max={100} value={fontSize} maxLength={3}
             onChange={e => setFontSize(+e.target.value)} />
-          <input type="color" value={color}
+          <input className={styles.color} type="color" value={color}
             onChange={e => setColor(e.target.value)} />
-          <input type="number" min={0} max={1} step={0.05} value={colorOpacity} maxLength={5}
+          <input className={styles.num} type="number" min={0} max={1} step={0.05} value={colorOpacity} maxLength={5}
             onChange={e => setColorOpacity(+e.target.value)} />
         </div>
       </div>
       <div className='tac'>
-        <img src={imageUrl} alt="image" />
+        <img src={imageUrl} alt="image" className={styles.img} />
       </div>
       <div className='tac'>
         <button onClick={download}>download</button>

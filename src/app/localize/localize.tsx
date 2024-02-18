@@ -8,6 +8,10 @@ export default function Localize() {
   const [iosText, setIosText] = useState('');
   const [androidText, setAndroidText] = useState('');
 
+  function example(): void {
+    format(`app_name	My App`);
+  }
+
   function format(s: string): void {
     setText(s);
     setIosText(toIos(s));
@@ -90,7 +94,7 @@ export default function Localize() {
     <>
       <div className={styles.texts}>
         <div>
-          <textarea placeholder="multiline text here"
+          <textarea placeholder="multiline TSV text here"
             value={text} className={styles.textarea}
             onChange={e => format(e.target.value)}
           ></textarea>
@@ -107,6 +111,9 @@ export default function Localize() {
             onChange={e => formatAndroid(e.target.value)}
           ></textarea>
         </div>
+      </div>
+      <div>
+        <button onClick={example}>Example</button>
       </div>
     </>
   )

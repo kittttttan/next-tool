@@ -5,10 +5,25 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Tools',
+  description: 'tools',
   icons: {
-    icon: '/favicon.ico'
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
   },
-  viewport: 'width=device-width, initial-scale=1.0',
+  openGraph: {
+    type: 'website',
+    url: 'https://tool.kittttttan.info',
+    title: 'Tools',
+    siteName: 'Tools',
+  },
+  twitter: {
+    card: 'summary',
+    site: '@ktn111',
+    creator: '@kittttttan',
+  },
+  formatDetection: {
+    telephone: false,
+  }
 }
 
 export default function RootLayout({ children }: {

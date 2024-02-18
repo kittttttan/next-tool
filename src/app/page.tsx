@@ -16,7 +16,7 @@ export default function Home() {
     <>
       <h2>Index</h2>
       <div style={{ margin: '0 auto' }}>
-        <ul>
+        <ul style={{ lineHeight: 1.5 }}>
           {links.map((link, i) => (
             <li key={i}>
               <Link href={link.u}>
@@ -27,7 +27,7 @@ export default function Home() {
         </ul>
         <ul>
           <li>
-            <Link href="https://github.com/kittttttan/next-tool">
+            <Link href="https://github.com/kittttttan/next-tool" rel="external" target="_blank">
               kittttttan/next-tool
             </Link>
           </li>

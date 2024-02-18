@@ -2,10 +2,10 @@ import Link from 'next/link'
 
 export default function Header() {
     return (
-        <header>
-            <h1>
+        <header className="header">
+            <h1 className="title">
                 <Link href="/">
-                    Apps
+                    Tools
                 </Link>
             </h1>
         </header>
