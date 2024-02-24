@@ -3,7 +3,10 @@ import Header from '../components/header'
 import Footer from '../components/footer'
 import type { Metadata } from 'next';
 
+const siteUrl = process.env.NEXT_PUBLIC_URL ?? '';
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: 'Tools',
   description: 'tools',
   icons: {
@@ -12,7 +15,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    url: 'https://tool.kittttttan.info',
+    url: siteUrl,
     title: 'Tools',
     siteName: 'Tools',
   },
