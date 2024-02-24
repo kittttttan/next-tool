@@ -1,2 +1,4 @@
+Sitemap: https://tool.kittttttan.info/sitemaps.xml
+
 User-agent: *
 Disallow:

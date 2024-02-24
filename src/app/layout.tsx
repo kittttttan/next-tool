@@ -1,6 +1,6 @@
 import './globals.css'
-import Header from '../components/header'
-import Footer from '../components/footer'
+import Header from '@/components/header'
+import Footer from '@/components/footer'
 import type { Metadata } from 'next';
 
 const siteUrl = process.env.NEXT_PUBLIC_URL ?? '';
@@ -10,8 +10,8 @@ export const metadata: Metadata = {
   title: 'Tools',
   description: 'tools',
   icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+    icon: 'https://assets.kittttttan.info/img/favicon.ico',
+    apple: 'https://assets.kittttttan.info/img/apple-touch-icon.png',
   },
   openGraph: {
     type: 'website',

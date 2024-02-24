@@ -27,11 +27,6 @@ body {
   background: var(--bg-color);
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 a[rel~="external"]::after {
   content: '↗';
   margin-left: 4px;
