@@ -1,23 +1,23 @@
 @import "normalize.css/normalize.css";
 
 :root {
-  --fg-color: #000;
+  --fg-color: #333;
   --bg-color: #fff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --fg-color: #fff;
-    --bg-color: #000;
+    --fg-color: #cccccc;
+    --bg-color: #0c0c0c;
   }
 
   a {
-    color: cyan;
+    color: #376fea;
   }
 
   a:hover,
   a:visited {
-    color: magenta;
+    color: #b4009e;
   }
 }
 
@@ -25,6 +25,7 @@ body {
   font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   color: var(--fg-color);
   background: var(--bg-color);
+  /* min-block-size: 100svb; */
 }
 
 a[rel~="external"]::after {
@@ -54,11 +55,10 @@ button:disabled {
 .container {
   padding: 0 1rem;
   max-width: 1000px;
-  margin: 0 auto;
+  margin-inline: auto;
+  min-block-size: 100svb;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
 }
 
 .header {
@@ -75,7 +75,6 @@ button:disabled {
 }
 
 main {
-  min-height: 80vh;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -94,4 +93,7 @@ main {
   font-size: .75rem;
   text-align: right;
   color: #94A3B8;
+  position: sticky;
+  padding: 8px 0;
+  inset-block-start: 100%;
 }
